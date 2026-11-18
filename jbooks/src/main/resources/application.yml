@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: jbooks
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jbooks?options=-c%20TimeZone=Asia/Ho_Chi_Minh
+    username: admin
+    password: secret
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  graphql:
+    graphiql:
+      enabled: true
+
+  threads:
+    virtual:
+      enabled: true
+
+  docker:
+    compose:
+      skip:
+        in-tests: false
+
+  management:
+    tracing:
+      sampling:
+        probability: 1.0
